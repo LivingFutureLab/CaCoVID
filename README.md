@@ -15,12 +15,8 @@
 Video large language models have demonstrated remarkable capabilities in video understanding tasks. However, the redundancy of video tokens introduces significant computational overhead during inference, limiting their practical deployment. Many compression algorithms are proposed to prioritize retaining features with the highest attention scores to minimize perturbations in attention computations. However, the correlation between attention scores and their actual contribution to correct answers remains ambiguous. To address the above limitation, we propose a novel **C**ontribution-**a**ware token **Co**mpression algorithm for **VID**eo understanding (**CaCoVID**) that explicitly optimizes the token selection policy based on the contribution of tokens to correct predictions. First, we introduce a reinforcement learning-based framework that optimizes a policy network to select video token combinations with the greatest contribution to correct predictions.  This paradigm shifts the focus from passive token preservation to active discovery of optimal compressed token combinations. Secondly, we propose a combinatorial policy optimization algorithm with online combination space sampling, which dramatically reduces the exploration space for video token combinations and accelerates the convergence speed of policy optimization.
 
 ## 📌 Highlights
-<div style="text-align:center">
-    <img src="images/introduction.png" alt="替代文字" width="400" />
-</div>
-<div style="text-align:center">
-    <img src="images/method.png" alt="替代文字" width="600" />
-</div>
+<img src="images/introduction.png" style="display: block; margin: 0 auto;" alt="替代文字" width="400" />
+<img src="images/method.png" style="display: block; margin: 0 auto;" alt="替代文字" width="600" />
 
 1. **Align with Accuracy.** Compared to attention-based pruning strategies, CaCoVID directly optimizes the policy network with feedback from large model predictions, avoiding the potental misalignment between token attention scores and their actual contributions to correct answers.
 
@@ -32,15 +28,11 @@ Video large language models have demonstrated remarkable capabilities in video u
 
 
 ## 🚀 Performance and Efficiency
-<div style="text-align:center">
-    <img src="images/performance.png" alt="替代文字" width="800" />
-</div>
+<img src="images/performance.png" style="display: block; margin: 0 auto;" alt="替代文字" width="800" />
 CaCoVID directly estimates the contribution of each token to the correct answer with feedback from large models, thereby retaining the most critical video tokens to accurately answer questions.
 
 <br>
-<div style="text-align:center">
-    <img src="images/efficiency.png" alt="替代文字" width="400" />
-</div>
+<img src="images/efficiency.png" style="display: block; margin: 0 auto;" alt="替代文字" width="400" />
 CaCoVID designs a simple and efficient policy network along with effective optimization algorithm to estimate token contribution scores to the correct answer, achieving higher average performance with lower pruning latency.
 
 
@@ -54,9 +46,7 @@ The compression policy network can effectively identify the most critical frames
 
 <br>
 
-<div style="text-align:center">
-    <img src="images/token_vis.png" alt="替代文字" width="400" />
-</div>
+<img src="images/token_vis.png" style="display: block; margin: 0 auto;" alt="替代文字" width="400" />
 
 Our compression policy network can handle complex video understanding and identify the most critical tokens relevant to the question, such as orange pumpkin, long-sleeved shirt, orange hoodie and black earbuds.
 
