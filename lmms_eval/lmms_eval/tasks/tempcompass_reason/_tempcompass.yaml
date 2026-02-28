@@ -1,0 +1,6 @@
+group: tempcompass_reason
+task:
+- tempcompass_multi_choice_reason
+- tempcompass_yes_no_reason
+#- tempcompass_caption_matching
+#- tempcompass_captioning

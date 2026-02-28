@@ -1,0 +1,26 @@
+dataset_path: /data/oss_bucket_0/video/Bench/lmms-lab/lmms-lab/tempcompass #lmms-lab/TempCompass
+dataset_kwargs:
+  token: True
+  video: True
+  cache_dir: tempcompass
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt: {
+      # for v1 prompt
+      #"multi-choice": "\nPlease directly give the best option. First output the thinking process in <think> </think> tags and then output the final answer in <answer> </answer> tags. Output the final answer in JSON format.",
+      # for v2 prompt
+      #"multi-choice": "\nPlease directly give the best option. First output the step-by-step thinking process in <think> </think> tags and then output the final answer in <answer> </answer> tags.\nThe thinking process must include three distinct steps:\n    Step 1: Task and Question Understanding. Analyze and clearly define the main task, requirements, and constraints of the problem. Identify the goal of the question and any essential context.\n    Step 2: Image/Video Caption Generation. Produce a detailed visual and contextual description of the provided image or video. Highlight key elements, actions, objects, scenes, or relationships present in the content. Ensure relevance to the task.\n    Step 3: Logical Reasoning and Sub-goal Decomposition. Employ systematic logical reasoning to derive the final answer. Break the task into sub-goals (if needed) to ensure a step-wise approach. Justify how each reasoning step logically connects to the next and supports the conclusion.\nThe final answer must in JSON format.",
+      
+      # for video-r1 prompt
+      "multi-choice": "\nPlease think about this question as if you were a human pondering deeply. Engage in an internal dialogue using expressions such as 'let me think', 'wait', 'Hmm', 'oh, I see', 'let's break it down', etc, or other natural language thought expressions. It's encouraged to include self-reflection or verification in the reasoning process. Provide your detailed reasoning between the <think> and </think> tags, and then give your final answer between the <answer> and </answer> tags.  Please provide only the single option letter (e.g., A, B, C, D, etc.) within the <answer> </answer> tags.",
+
+      "yes_no": "\nPlease answer yes or no. First output the thinking process in <think> </think> tags and then output the final answer in <answer> </answer> tags. Output the final answer in JSON format."
+      }
+
+generation_kwargs:
+  max_new_tokens: 8192
+  temperature: 0.01
+  top_p: 0.001
+  num_beams: 1
+  do_sample: false
