@@ -6,9 +6,9 @@
 <a href="https://arxiv.org/abs/2602.01649">
 <img alt="Paper" src="https://img.shields.io/badge/Paper-Arxiv%20Link-light">
 </a>
-<!-- <a href="xxx">
+<a href="https://huggingface.co/moraleyc/CaCoVID_LLaVA-OneVision">
 <img alt="Paper" src="https://img.shields.io/badge/CaCoVID-checkpoints-blue">
-</a> -->
+</a>
 </div align="center">
 
 ## 💡 About CaCoVID
